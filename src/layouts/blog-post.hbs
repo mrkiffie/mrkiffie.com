@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{>html-head}}
+
+<body>
+    {{>header}}
+
+    <main role="main">
+
+        <article>
+            <header>
+                <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
+                <h1>{{title}}</h1>
+            </header>
+
+            {{{contents}}}
+        </article>
+
+    </main>
+
+    {{>footer}}
+</body>
+</html>

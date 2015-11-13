@@ -1,0 +1,46 @@
+{
+  "name": "mrkiffie.com",
+  "version": "1.0.0",
+  "description": "static site generator for mrkiffie.com",
+  "homepage": "http://mrkiffie.com",
+  "scripts": {
+    "start": "nodemon --watch build.js --watch scripts build.js",
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrkiffie/mrkiffie.com.git"
+  },
+  "author": "mrkiffie <mrkiffie@mrkiffie.com>",
+  "private": true,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrkiffie/mrkiffie.com/issues"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "handlebars": "^4.0.4",
+    "marked": "^0.3.5",
+    "metalsmith": "^2.1.0",
+    "metalsmith-beautify": "0.0.7",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-html-minifier": "^1.1.0",
+    "metalsmith-layouts": "^1.4.2",
+    "metalsmith-markdown": "^0.2.1",
+    "metalsmith-move-up": "^1.0.0",
+    "metalsmith-permalinks": "^0.4.0",
+    "metalsmith-prism": "^2.1.1",
+    "metalsmith-serve": "0.0.4",
+    "metalsmith-static": "0.0.5",
+    "metalsmith-watch": "^1.0.1",
+    "mkdirp": "^0.5.1",
+    "nodemon": "^1.8.1",
+    "strftime": "^0.9.2"
+  },
+  "devDependencies": {
+    "eslint": "^1.9.0"
+  }
+}
