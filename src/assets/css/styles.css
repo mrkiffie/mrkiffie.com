@@ -44,56 +44,10 @@ img {
     max-width: 100%;
 }
 
-.logo {
-    position: relative;
-    z-index: 1;
-    display: block;
-    border-radius: 50%;
-    width: 9em;
-    margin: 0 auto;
-    overflow: hidden;
-    text-align: center;
-}
-
 .logo img {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    opacity: .9;
-    will-change: opacity;
-    transition: opacity 0s;
-}
-
-.logo:focus img {
-    transition: opacity 1.5s;
-    opacity: 0;
-}
-
-.logo:before {
-    content: '';
-    display: none;
-    position: absolute;
-    overflow: hidden;
-    z-index: 0;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: url(../img/tank.jpg) no-repeat 0 0;
-    background-size: cover;
-    transform: scale(0.7) translate(-14%, -14%);
-    will-change: transform;
-}
-
-.logo:focus:before {
-    display: block;
-    animation: logoInteraction 4s ease-in-out -2s;
-}
-
-@keyframes logoInteraction {
-    50% {
-        transform: scale(.5) translate(0%, 0%)
-    }
 }
 
 h1,
