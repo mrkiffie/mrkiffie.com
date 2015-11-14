@@ -10,24 +10,32 @@
   const marked = require('marked');
   const Metalsmith = require('metalsmith');
   const collections = require('metalsmith-collections');
+  const fingerprint = require('metalsmith-fingerprint-ignore');
   const htmlmin = require('metalsmith-html-minifier');
   const layouts = require('metalsmith-layouts');
+  const less = require('metalsmith-less');
   const markdown = require('metalsmith-markdown');
   const moveup = require('metalsmith-move-up');
   const permalinks = require('metalsmith-permalinks');
   const prism = require('metalsmith-prism');
   const serve = require('metalsmith-serve');
-  const assets = require('metalsmith-static');
   const watch = require('metalsmith-watch');
+
+  const fingerprintmeta = require('./scripts/plugins/fingerprint-meta');
+  const addstyle = require('./scripts/plugins/add-styles-to-frontmatter');
 
   Metalsmith(path.join(__dirname))
     .metadata({
       site: require(path.join(__dirname, 'src/content/site.json'))
     })
-    .use(assets({
-      'src': 'assets',
-      'dest': 'assets'
+    .use(less({
+      useDynamicSourceMap: true
     }))
+    .use(fingerprint({
+      pattern: '**/*.css'
+    }))
+    .use(addstyle())
+    .use(fingerprintmeta())
     .use(collections({
       posts: {
         pattern: 'content/posts/**/*',
