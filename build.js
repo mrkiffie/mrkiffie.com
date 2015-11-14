@@ -9,7 +9,6 @@
 
   const marked = require('marked');
   const Metalsmith = require('metalsmith');
-  const beautify = require('metalsmith-beautify');
   const collections = require('metalsmith-collections');
   const htmlmin = require('metalsmith-html-minifier');
   const layouts = require('metalsmith-layouts');
@@ -69,7 +68,6 @@
     .use(htmlmin({
       removeAttributeQuotes: false
     }))
-    .use(beautify())
     .use(watch({
       livereload: true
     }))
