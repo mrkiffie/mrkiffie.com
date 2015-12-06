@@ -12,6 +12,7 @@
   const collections = require('metalsmith-collections');
   const fingerprint = require('metalsmith-fingerprint-ignore');
   const htmlmin = require('metalsmith-html-minifier');
+  const msif = require('metalsmith-if');
   const layouts = require('metalsmith-layouts');
   const less = require('metalsmith-less');
   const markdown = require('metalsmith-markdown');
@@ -20,9 +21,21 @@
   const prism = require('metalsmith-prism');
   const serve = require('metalsmith-serve');
   const watch = require('metalsmith-watch');
+  const yargs = require('yargs')
+    .option('env', {
+      alias: 'e',
+      describe: 'choose the production env',
+      choices: ['prod', 'dev'],
+      default: 'dev'
+    })
+    .argv;
+
 
   const fingerprintmeta = require('./scripts/plugins/fingerprint-meta');
   const addstyle = require('./scripts/plugins/add-styles-to-frontmatter');
+
+  const isDev = yargs.env == 'dev';
+  const isProd = yargs.env == 'prod';
 
   Metalsmith(path.join(__dirname))
     .metadata({
@@ -31,11 +44,17 @@
     .use(less({
       useDynamicSourceMap: true
     }))
-    .use(fingerprint({
-      pattern: '**/*.css'
-    }))
+    .use(msif(
+      isProd,
+      fingerprint({
+        pattern: '**/*.css'
+      })
+    ))
     .use(addstyle())
-    .use(fingerprintmeta())
+    .use(msif(
+      isProd,
+      fingerprintmeta()
+    ))
     .use(collections({
       posts: {
         pattern: 'content/posts/**/*',
@@ -77,7 +96,7 @@
       removeAttributeQuotes: false
     }))
     .use(watch({
-      livereload: true
+      livereload: isDev
     }))
     .use(serve({
       port: 7000,
