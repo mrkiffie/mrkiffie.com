@@ -1,3 +1,3 @@
 # Helpers
 
-These are helpers for handlebars
+These are template helpers for handlebars
