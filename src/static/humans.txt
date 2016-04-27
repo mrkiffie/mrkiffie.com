@@ -1,0 +1,14 @@
+/* TEAM */
+  Creator: Kiffie Liversage
+  Site: https://mrkiffie.com
+  Contact: mrkiffie@gmail.com
+  Location: Cape Town, South Africa
+
+/* THANKS */
+  To all my readers. I'm glad you get to be a part of my life and passions.
+
+/* SITE */
+  Last update: 2016/04/27
+  Language: English
+  Standards: HTML, CSS
+  Software: Node.js, Metalsmith, VS Code, Chrome

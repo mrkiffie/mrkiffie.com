@@ -70,6 +70,9 @@
       pattern: 'posts/**/*'
     }))
     .use(moveup({
+      pattern: 'static/**/*'
+    }))
+    .use(moveup({
       pattern: 'assets/favicon.ico'
     }))
     .use(markdown({
