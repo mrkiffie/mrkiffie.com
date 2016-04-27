@@ -72,9 +72,6 @@
     .use(moveup({
       pattern: 'static/**/*'
     }))
-    .use(moveup({
-      pattern: 'assets/favicon.ico'
-    }))
     .use(markdown({
       breaks: true,
       langPrefix: 'language-',
