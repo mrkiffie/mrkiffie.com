@@ -1,0 +1,10 @@
+This is a special place where hackers are permitted to make changes,
+well, actually only additions, appending their name, date, location,
+contact and info as they choose.
+
+1.  Name: KiFFiE
+    Location: South Africa
+    Date: YYYY/MM/DD
+    Contact: https://mrkiffie.com
+
+2.
