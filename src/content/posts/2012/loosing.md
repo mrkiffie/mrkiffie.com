@@ -1,6 +1,6 @@
 ---
 title: "Loosing"
-date: 2012-09-05
+date: 2012-09-05 18:24:27 +02:00
 category: "random"
 layout: blog-post.hbs
 ---

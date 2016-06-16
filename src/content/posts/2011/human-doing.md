@@ -1,6 +1,6 @@
 ---
 title: "Human Doing?"
-date: 2011-05-31
+date: 2011-05-31 11:37:35 +05:30
 category: "truth"
 layout: blog-post.hbs
 styles:

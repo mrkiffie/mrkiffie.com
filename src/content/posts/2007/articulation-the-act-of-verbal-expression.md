@@ -1,6 +1,6 @@
 ---
 title: "Articulation: The act of verbal expression"
-date: 2007-08-01
+date: 2007-08-01 11:16:47 +02:00
 category: "random"
 layout: blog-post.hbs
 ---

@@ -1,6 +1,6 @@
 ---
 title: "hackers.txt"
-date: 2011-06-03
+date: 2011-06-03 05:18:10 +05:30
 category: "code"
 layout: blog-post.hbs
 ---

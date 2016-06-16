@@ -1,6 +1,6 @@
 ---
 title: "truth and loyalty"
-date: 2007-08-05
+date: 2007-08-05 14:19:00 +02:00
 category: "truth"
 layout: blog-post.hbs
 ---

@@ -1,6 +1,6 @@
 ---
 title: "I am KiFFiE"
-date: 2011-05-18
+date: 2011-05-18 12:00:59 +05:30
 category: "get-informed"
 layout: blog-post.hbs
 ---

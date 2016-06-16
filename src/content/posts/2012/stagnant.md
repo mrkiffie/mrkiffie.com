@@ -1,6 +1,6 @@
 ---
 title: "Stagnant"
-date: 2012-05-14
+date: 2012-05-14 03:34:12 +02:00
 category: "random"
 layout: blog-post.hbs
 ---

@@ -1,6 +1,6 @@
 ---
 title: "in and around my head"
-date: 2007-08-01
+date: 2007-08-01 12:42:09 +02:00
 category: "random"
 layout: blog-post.hbs
 styles:

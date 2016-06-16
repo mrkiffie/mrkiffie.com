@@ -1,6 +1,6 @@
 ---
 title: "the future"
-date: 2008-04-25
+date: 2008-04-25 10:55:55 +02:00
 category: "random"
 layout: blog-post.hbs
 ---

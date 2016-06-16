@@ -1,6 +1,6 @@
 ---
 title: "Molten Stone"
-date: 2012-06-23
+date: 2012-06-23 00:27:33 +02:00
 category: "random"
 layout: blog-post.hbs
 styles: 

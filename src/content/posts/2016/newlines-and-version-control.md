@@ -1,6 +1,6 @@
 ---
 title: "Newlines and Version Control"
-date: 2016-04-27
+date: 2016-04-27 19:01:51 +02:00
 category: "code"
 layout: blog-post.hbs
 styles:

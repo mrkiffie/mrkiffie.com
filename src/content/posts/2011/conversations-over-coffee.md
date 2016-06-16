@@ -1,6 +1,6 @@
 ---
 title: "conversations over coffee"
-date: 2011-05-10
+date: 2011-05-10 12:00:15 +05:30
 category: "truth"
 layout: blog-post.hbs
 ---

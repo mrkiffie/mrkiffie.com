@@ -1,6 +1,6 @@
 ---
 title: "the view i had"
-date: 2007-08-01
+date: 2007-08-01 13:32:48 +02:00
 category: "random"
 layout: blog-post.hbs
 ---
