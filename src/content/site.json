@@ -9,7 +9,7 @@
         "title": "Go to the home page"
     },
     "about": {
-        "link": "/about",
+        "link": "/about/",
         "text": "About",
         "title": "Information about me"
     },
