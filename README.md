@@ -38,21 +38,26 @@ The source files are structured as described by the following tree
  ├── assets/
  │   ├── css/           // styles css and less
  │   ├── img/
- │   └── favicon.ico
+ │   └── js/            // javascript files
  ├── content/
  │   ├── posts/
  │   │   ├── <year>/    // these contain posts in markdown organized by year
  │   ├── 404.md         // customizable 404
  │   ├── about.md       // example of a page
- │   └── site.json      // contains site meta data, e.g. title, links, etc.
- └── layouts/
-     ├── partials/
-     │   ├── footer.hbs
-     │   ├── header.hbs
-     │   └── html-head.hbs
-     ├── blog-index.hbs
-     ├── blog-post.hbs
-     └── index.hbs
+ │   └── site.json      // contains site config meta data, e.g. title, links, etc.
+ ├── layouts
+ │   ├── partials
+ │   │   ├── footer.hbs
+ │   │   ├── header.hbs
+ │   │   └── html-head.hbs
+ │   ├── blog-index.hbs
+ │   ├── blog-post.hbs
+ │   ├── index.hbs
+ │   └── offline.hbs    // custom offline template
+ ├── static             // static asset that should be in the root
+ │   └── favicon.ico
+ ├── manifest.json      // manifest for web apps
+ └── service-worker.js  // service worker to enable offline access to previously accessed content
 ```
 
 
@@ -102,3 +107,18 @@ title: 404
 
 - `permalink: false` disables the permalink middleware. The `404.md` file will be output as `404.html` instead of `404/index.html`.
 - `robots` allows you to overwrite robots meta tag rules - defaults to `index, follow`.
+
+
+### Example custom script
+```md
+---
+layout: offline.hbs
+robots: "noindex, follow"
+title: Offline
+listing: true
+scripts:
+    - offline.js
+---
+```
+
+- `scripts` is an array of additional javascript files to include - the global scripts are automatically included on each page.
