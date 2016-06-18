@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{>html-head}}
+
+<body>
+    {{>header}}
+
+    <main role="main">
+        <section>
+
+            <h1>{{title}}</h1>
+
+            {{{contents}}}
+
+            <ul>
+                {{#each collections.posts}}
+                    {{#unless listing}}
+                        <li hidden>
+                            <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
+                            <a href="/{{path}}/">{{title}}</a>
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+
+        </section>
+    </main>
+
+    {{>footer}}
+</body>
+</html>
