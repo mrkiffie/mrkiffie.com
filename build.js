@@ -32,7 +32,8 @@
 
 
   const fingerprintmeta = require('./scripts/plugins/fingerprint-meta');
-  const addstyle = require('./scripts/plugins/add-styles-to-frontmatter');
+  const addstyle = require('./scripts/plugins/add-styles');
+  const addscript = require('./scripts/plugins/add-scripts');
 
   const isDev = yargs.env == 'dev';
   const isProd = yargs.env == 'prod';
@@ -47,10 +48,11 @@
     .use(msif(
       isProd,
       fingerprint({
-        pattern: '**/*.css'
+        pattern: ['**/css/*.css', '**/js/*.js']
       })
     ))
     .use(addstyle())
+    .use(addscript())
     .use(msif(
       isProd,
       fingerprintmeta()
