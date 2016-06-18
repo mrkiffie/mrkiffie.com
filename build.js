@@ -49,15 +49,11 @@
     .use(msif(
       isProd,
       fingerprint({
-        pattern: ['**/css/*.css', '**/js/*.js']
+        pattern: ['**/css/*.css', '**/js/*.js', '**/*.svg', '**/*.jpg']
       })
     ))
     .use(addstyle())
     .use(addscript())
-    .use(msif(
-      isProd,
-      fingerprintmeta()
-    ))
     .use(collections({
       posts: {
         pattern: 'content/posts/**/*',
@@ -95,6 +91,10 @@
         strftime: require('./scripts/helpers/strftime.js'),
       }
     }))
+    .use(msif(
+      isProd,
+      fingerprintmeta()
+    ))
     .use(htmlmin({
       removeAttributeQuotes: false
     }))
