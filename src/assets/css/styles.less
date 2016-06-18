@@ -3,9 +3,10 @@ body {
     color: #222;
     font-weight: 300;
     line-height: 1.5;
-    width: 30em;
-    max-width: 80%;
+    width: 80%;
+    max-width: 30em;
     margin: 2em auto 0;
+    padding: 0 1em;
     font-size: 100%;
 }
 
@@ -32,13 +33,19 @@ img {
     width: auto;
     height: auto;
     outline: 0;
+    border: 0;
     max-width: 100%;
 }
 
-.logo img {
+.logo {
+    width: 144px;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
-    border-radius: 50%;
+    img {
+        display: block;
+        border-radius: 50%;
+    }
 }
 
 h1,
@@ -113,40 +120,22 @@ section {
         margin: 0;
         padding: 0;
         li {
-            div {
-                padding: 0 0 1.5em;
-            }
-            time {
-                font-size: .75em;
-                white-space: nowrap;
-                line-height: 2em;
-            }
+            padding: 0 0 1.5em;
         }
+    }
+    time {
+        display: block;
+        font-size: .75em;
+        white-space: nowrap;
+        line-height: 2em;
     }
 }
 
-@media screen and (min-width: 300px) {
-    section ul {
-        width: 100%;
-        display: table;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        direction: rtl;
-        li {
-            display: table-row;
-            div {
-                direction: ltr;
-                display: table-cell;
-                text-align: left;
-                padding: 0 1em 1.5em 0;
-            }
-            time {
-                direction: ltr;
-                display: table-cell;
-                text-align: right;
-            }
-        }
+@media screen and (min-width: 375px) {
+    section time {
+        float: right;
+        margin-left: 1em;
+        display: initial;
     }
 }
 
@@ -208,7 +197,7 @@ pre {
     border: 1px solid #ebe7e5;
     border-left-width: .5em;
     overflow: auto;
-    margin: 1em -10% 1.5em;
+    margin: 1em 0 1.5em;
     -webkit-overflow-scrolling: touch;
     code {
         padding: 0;

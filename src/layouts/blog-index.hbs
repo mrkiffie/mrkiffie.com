@@ -10,13 +10,15 @@
 
             <h1>{{title}}</h1>
 
+            {{{contents}}}
+
             <ul>
                 {{#each collections.posts}}
                     {{#startswith path ../path}}
                         {{#unless listing}}
                             <li>
                                 <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
-                                <div><a href="/{{path}}/">{{title}}</a></div>
+                                <a href="/{{path}}/">{{title}}</a>
                             </li>
                         {{/unless}}
                     {{/startswith}}
