@@ -31,6 +31,7 @@
     .argv;
 
 
+  const remove = require('./scripts/plugins/remove');
   const fingerprintmeta = require('./scripts/plugins/fingerprint-meta');
   const addstyle = require('./scripts/plugins/add-styles');
   const addscript = require('./scripts/plugins/add-scripts');
@@ -96,6 +97,9 @@
     }))
     .use(htmlmin({
       removeAttributeQuotes: false
+    }))
+    .use(remove({
+      pattern: ['**/layouts/**', 'site.json'],
     }))
     .use(watch({
       livereload: isDev
