@@ -1,0 +1,16 @@
+{
+    "lang": "en",
+    "short_name": "mrkiffie",
+    "name": "mrkiffie",
+    "icons": [
+        {
+            "src": "/assets/img/kiffie.jpg",
+            "sizes": "288x288",
+            "type": "image/jpeg"
+        }
+    ],
+    "start_url": "/",
+    "display": "browser",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff"
+}
