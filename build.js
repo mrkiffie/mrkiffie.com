@@ -9,6 +9,7 @@
 
   const marked = require('marked');
   const Metalsmith = require('metalsmith');
+  const babel = require('metalsmith-babel');
   const collections = require('metalsmith-collections');
   const fingerprint = require('metalsmith-fingerprint-ignore');
   const htmlmin = require('metalsmith-html-minifier');
@@ -43,6 +44,13 @@
     .metadata({
       site: require(path.join(__dirname, 'src/content/site.json'))
     })
+    .use(babel({
+      presets: ['es2015'],
+      sourceMaps: isDev,
+      compact: isProd,
+      comments: isDev,
+      minified: isProd
+    }))
     .use(less({
       useDynamicSourceMap: true
     }))
