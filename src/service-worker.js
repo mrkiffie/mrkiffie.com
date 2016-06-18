@@ -28,8 +28,10 @@ function updateStaticCache() {
 }
 
 function stashInCache(cacheName, request, response) {
-  caches.open(cacheName)
-    .then(cache => cache.put(request, response));
+  if (response.status === 200) {
+    caches.open(cacheName)
+      .then(cache => cache.put(request, response));
+  }
 }
 
 // Limit the number of items in a specified cache.
