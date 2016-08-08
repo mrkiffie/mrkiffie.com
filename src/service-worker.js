@@ -18,7 +18,7 @@ function updateStaticCache() {
         '/assets/css/styles.css',
         '/assets/css/prism.css',
         '/assets/css/fancy-quotes.css',
-        '/assets/img/kiffie.jpg',
+        '/assets/img/kiffie-144x144.jpg',
         '/assets/img/offline.svg',
         '/assets/js/main.js',
         '/assets/js/offline.js',
