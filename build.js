@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 
-(function () {
-
+(function() {
   'use strict';
 
   const path = require('path');
-  const fs = require('fs');
 
   const marked = require('marked');
-  const Metalsmith = require('metalsmith');
+  const metalsmith = require('metalsmith');
   const babel = require('metalsmith-babel');
   const collections = require('metalsmith-collections');
   const fingerprint = require('metalsmith-fingerprint-ignore');
@@ -31,16 +29,15 @@
     })
     .argv;
 
-
   const remove = require('./scripts/plugins/remove');
   const fingerprintmeta = require('./scripts/plugins/fingerprint-meta');
   const addstyle = require('./scripts/plugins/add-styles');
   const addscript = require('./scripts/plugins/add-scripts');
 
-  const isDev = yargs.env == 'dev';
-  const isProd = yargs.env == 'prod';
+  const isDev = yargs.env === 'dev';
+  const isProd = yargs.env === 'prod';
 
-  Metalsmith(path.join(__dirname))
+  metalsmith(path.join(__dirname))
     .metadata({
       site: require(path.join(__dirname, 'src/content/site.json'))
     })
@@ -96,7 +93,7 @@
       helpers: {
         equals: require('./scripts/helpers/equals.js'),
         startswith: require('./scripts/helpers/startswith.js'),
-        strftime: require('./scripts/helpers/strftime.js'),
+        strftime: require('./scripts/helpers/strftime.js')
       }
     }))
     .use(msif(
@@ -107,9 +104,13 @@
       removeAttributeQuotes: false
     }))
     .use(remove({
-      pattern: ['**/layouts/**', 'site.json'],
+      pattern: ['**/layouts/**', 'site.json']
     }))
     .use(watch({
+      paths: {
+        "${source}/**/*": true,
+        "${source}/layouts/**/*": "**/*.md"
+      },
       livereload: isDev
     }))
     .use(serve({
@@ -124,5 +125,4 @@
         throw err;
       }
     });
-
-}());
+})();
