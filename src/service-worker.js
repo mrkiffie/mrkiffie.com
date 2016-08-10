@@ -73,7 +73,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('message', event => {
-  if (event.data.command == 'trimCaches') {
+  if (event.data.command === 'trimCaches') {
     trimCache(pagesCacheName, 25);
     trimCache(imagesCacheName, 15);
   }
@@ -96,7 +96,7 @@ self.addEventListener('fetch', event => {
     request = new Request(url, {
       method: 'GET',
       headers: request.headers,
-      mode: request.mode == 'navigate' ? 'cors' : request.mode,
+      mode: request.mode === 'navigate' ? 'cors' : request.mode,
       credentials: request.credentials,
       redirect: request.redirect
     });

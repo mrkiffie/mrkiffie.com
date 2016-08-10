@@ -7,7 +7,7 @@ if (window.caches) {
           var cachedUrls = keys.map(function(req) {
             return req.url;
           });
-          [].slice.call(document.querySelectorAll('main a')).map(function(a) {
+          [].slice.call(document.querySelectorAll('main a')).forEach(a => {
             if (cachedUrls.indexOf(a.href) > -1) {
               a.parentNode.hidden = false;
             }
