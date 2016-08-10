@@ -1,6 +1,6 @@
 module.exports = function fingerprintmeta() {
   'use strict';
-  return function (files, metalsmith, done) {
+  return function(files, metalsmith, done) {
     setImmediate(done);
     let map = metalsmith.metadata().fingerprint;
     Object.keys(files).forEach(file => {

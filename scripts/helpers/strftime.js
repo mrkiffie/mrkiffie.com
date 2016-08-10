@@ -1,6 +1,6 @@
 const strftime = require('strftime');
 
-module.exports = function (date, format) {
+module.exports = function(date, format) {
   'use strict';
   let parsedDate = new Date(date);
 

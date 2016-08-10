@@ -6,14 +6,14 @@ const multimatch = require('multimatch');
 module.exports = function remove(options) {
   'use strict';
 
-  return function (files, metalsmith, done) {
+  return function(files, metalsmith, done) {
     setImmediate(done);
 
     Object.keys(files)
-      .filter(function (file) {
+      .filter(function(file) {
         return multimatch(file, options.pattern).length > 0;
       })
-      .forEach(function (file) {
+      .forEach(function(file) {
         delete files[file];
       });
     return;

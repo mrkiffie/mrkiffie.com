@@ -30,9 +30,9 @@
     .argv;
 
   const remove = require('./scripts/plugins/remove');
-  const fingerprintmeta = require('./scripts/plugins/fingerprint-meta');
-  const addstyle = require('./scripts/plugins/add-styles');
-  const addscript = require('./scripts/plugins/add-scripts');
+  const fingerprintMeta = require('./scripts/plugins/fingerprint-meta');
+  const addStyle = require('./scripts/plugins/add-styles');
+  const addScript = require('./scripts/plugins/add-scripts');
   const replaceVersion = require('./scripts/plugins/replace-version');
 
   const isDev = yargs.env === 'dev';
@@ -60,8 +60,8 @@
         pattern: ['**/css/*.css', '**/js/*.js', '**/*.svg', '**/*.jpg']
       })
     ))
-    .use(addstyle())
-    .use(addscript())
+    .use(addStyle())
+    .use(addScript())
     .use(collections({
       posts: {
         pattern: 'content/posts/**/*',
@@ -101,7 +101,7 @@
     }))
     .use(msif(
       isProd,
-      fingerprintmeta()
+      fingerprintMeta()
     ))
     .use(htmlmin({
       removeAttributeQuotes: false
@@ -111,15 +111,15 @@
     }))
     .use(watch({
       paths: {
-        "${source}/**/*": true,
-        "${source}/layouts/**/*": "**/*.md"
+        '${source}/**/*': true,
+        '${source}/layouts/**/*': '**/*.md'
       },
       livereload: isDev
     }))
     .use(serve({
       port: 7000,
-      http_error_files: {
-        404: "/404.html"
+      http_error_files: { // eslint-disable-line camelcase
+        404: '/404.html'
       }
     }))
     .destination(path.join(__dirname, 'build'))
