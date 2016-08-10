@@ -33,14 +33,17 @@
   const fingerprintmeta = require('./scripts/plugins/fingerprint-meta');
   const addstyle = require('./scripts/plugins/add-styles');
   const addscript = require('./scripts/plugins/add-scripts');
+  const replaceVersion = require('./scripts/plugins/replace-version');
 
   const isDev = yargs.env === 'dev';
   const isProd = yargs.env === 'prod';
 
   metalsmith(path.join(__dirname))
     .metadata({
-      site: require(path.join(__dirname, 'src/content/site.json'))
+      site: require(path.join(__dirname, 'src/content/site.json')),
+      package: require(path.join(__dirname, 'package.json'))
     })
+    .use(replaceVersion())
     .use(babel({
       presets: ['es2015'],
       sourceMaps: isDev,

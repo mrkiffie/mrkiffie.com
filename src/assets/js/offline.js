@@ -1,6 +1,6 @@
 if (window.caches) {
   // Display posts that are available offline
-  caches.open('v1.0.0::pages')
+  caches.open('v{{ PACKAGE.VERSION }}::pages')
     .then(function(cache) {
       cache.keys()
         .then(function(keys) {

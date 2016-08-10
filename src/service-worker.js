@@ -1,6 +1,6 @@
 'use strict';
 
-const version = 'v1.0.1::';
+const version = 'v{{ PACKAGE.VERSION }}::';
 const staticCacheName = version + 'static';
 const pagesCacheName = version + 'pages';
 const imagesCacheName = version + 'images';
