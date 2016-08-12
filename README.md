@@ -1,6 +1,6 @@
 # [mrkiffie.com](http://mrkiffie.com)
 
-This is my static site generator. It uses metalsmith to do most of the heavy lifting.
+This is my static site generator. It uses metalsmith to do most of the heavy lifting. There are a few custom plugins and handlebar helpers to do the finishing touches.
 
 ## Installation
 
@@ -17,17 +17,28 @@ npm start
 Starts a development server instance on `http://localhost:7000`
 
 **Features:**
-- uses nodemon to watch files used for the build process and will restart when file changes are detected
+- uses `nodemon` to watch files used for the build process and will restart when file changes are detected
 - changes to source files trigger a rebuild
-- livereload support
+- `livereload` support
 
 
 ### `npm run build`
 
-Starts a server instance similar to the development server, except for the following
+Generates a clean build of the static site from scratch
 
 **Features:**
-- fingerprints the asset files - useful for aggressive caching and cache busting. livereload is disabled as the fingerprints require an entire page refresh
+- fingerprints the asset files - useful for aggressive caching and cache busting.
+
+
+### `npm run lint`
+
+Runs all the javascrit files through `eslint`
+
+
+### `npm run deploy`
+
+Creates a clean build and then publishes the changes to the `gh-pages` branch.
+Requires the `deploy.sh` script from [git-directory-deploy](https://github.com/X1011/git-directory-deploy) to be installed
 
 ## Source files
 

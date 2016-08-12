@@ -107,21 +107,27 @@
       removeAttributeQuotes: false
     }))
     .use(remove({
-      pattern: ['**/layouts/**', 'site.json']
+      pattern: ['**/layouts/**', 'site.json', '.eslintrc']
     }))
-    .use(watch({
-      paths: {
-        '${source}/**/*': true,
-        '${source}/layouts/**/*': '**/*.md'
-      },
-      livereload: isDev
-    }))
-    .use(serve({
-      port: 7000,
-      http_error_files: { // eslint-disable-line camelcase
-        404: '/404.html'
-      }
-    }))
+    .use(msif(
+      isDev,
+      watch({
+        paths: {
+          '${source}/**/*': true,
+          '${source}/layouts/**/*': '**/*.md'
+        },
+        livereload: isDev
+      })
+    ))
+    .use(msif(
+      isDev,
+      serve({
+        port: 7000,
+        http_error_files: { // eslint-disable-line camelcase
+          404: '/404.html'
+        }
+      })
+    ))
     .destination(path.join(__dirname, 'build'))
     .build((err, files) => {
       if (err) {
