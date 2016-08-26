@@ -1,4 +1,4 @@
-# [mrkiffie.com](http://mrkiffie.com)
+# [mrkiffie.com](https://mrkiffie.com)
 
 This is my static site generator. It uses metalsmith to do most of the heavy lifting. There are a few custom plugins and handlebar helpers to do the finishing touches.
 
@@ -16,7 +16,8 @@ npm start
 
 Starts a development server instance on `http://localhost:7000`
 
-**Features:**
+#### Dev features
+
 - uses `nodemon` to watch files used for the build process and will restart when file changes are detected
 - changes to source files trigger a rebuild
 - `livereload` support
@@ -26,13 +27,14 @@ Starts a development server instance on `http://localhost:7000`
 
 Generates a clean build of the static site from scratch
 
-**Features:**
+#### Build features
+
 - fingerprints the asset files - useful for aggressive caching and cache busting.
 
 
 ### `npm run lint`
 
-Runs all the javascrit files through `eslint`
+Runs all the javascript files through `eslint`
 
 
 ### `npm run deploy`
@@ -44,32 +46,31 @@ Requires the `deploy.sh` script from [git-directory-deploy](https://github.com/X
 
 The source files are structured as described by the following tree
 
-```
- src/
- ├── assets/
- │   ├── css/           // styles css and less
- │   ├── img/
- │   └── js/            // javascript files
- ├── content/
- │   ├── posts/
- │   │   ├── <year>/    // these contain posts in markdown organized by year
- │   ├── 404.md         // customizable 404
- │   ├── about.md       // example of a page
- │   └── site.json      // contains site config meta data, e.g. title, links, etc.
- ├── layouts
- │   ├── partials
- │   │   ├── footer.hbs
- │   │   ├── header.hbs
- │   │   └── html-head.hbs
- │   ├── blog-index.hbs
- │   ├── blog-post.hbs
- │   ├── index.hbs
- │   └── offline.hbs    // custom offline template
- ├── static             // static asset that should be in the root
- │   └── favicon.ico
- ├── manifest.json      // manifest for web apps
- └── service-worker.js  // service worker to enable offline access to previously accessed content
-```
+
+    src/
+    ├── assets/
+    │   ├── css/           // styles css and less
+    │   ├── img/
+    │   └── js/            // javascript files
+    ├── content/
+    │   ├── posts/
+    │   │   ├── <year>/    // these contain posts in markdown organized by year
+    │   ├── 404.md         // customizable 404
+    │   ├── about.md       // example of a page
+    │   └── site.json      // contains site config meta data, e.g. title, links, etc.
+    ├── layouts
+    │   ├── partials
+    │   │   ├── footer.hbs
+    │   │   ├── header.hbs
+    │   │   └── html-head.hbs
+    │   ├── blog-index.hbs
+    │   ├── blog-post.hbs
+    │   ├── index.hbs
+    │   └── offline.hbs    // custom offline template
+    ├── static             // static asset that should be in the root
+    │   └── favicon.ico
+    ├── manifest.json      // manifest for web apps
+    └── service-worker.js  // service worker to enable offline access to previously accessed content
 
 
 ## Frontmatter
@@ -77,7 +78,8 @@ The source files are structured as described by the following tree
 Certain frontmatter has special value to the build system.
 
 ### Example list page
-``` md
+
+```yaml
 ---
 title: Writings
 layout: blog-index.hbs
@@ -85,13 +87,14 @@ listing: true
 ---
 ```
 
-- `title` is the title used in the `<title>` tag and the main heading (`h1`).
+- `title` is the title used in the `<title>` tag and the main heading (`<h1>`).
 - `layout` specifies the layout template to use - relative to the `layouts` dir.
 - `listing: true` is meta data used exclude links to themselves in the list. This is done at the template level.
 
 
 ### Example blog post
-``` md
+
+```yaml
 ---
 title: "in and around my head"
 date: 2007-08-01
@@ -107,7 +110,8 @@ styles:
 - `styles` is an array of additional css files to include - the base stylesheet is automatically included for each page.
 
 ### Example 404
-``` md
+
+```yaml
 ---
 layout: index.hbs
 permalink: false
@@ -121,7 +125,8 @@ title: 404
 
 
 ### Example custom script
-```md
+
+```yaml
 ---
 layout: offline.hbs
 robots: "noindex, follow"
