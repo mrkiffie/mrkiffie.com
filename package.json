@@ -8,6 +8,7 @@
     "build": "rm -rf build/ && node build.js --env prod",
     "lint": "node_modules/eslint/bin/eslint.js --ignore-path .gitignore .",
     "deploy": "npm run build && deploy.sh -c .env",
+    "analysis": "plato -r -n -d analysis -x \"(node_modules/|analysis/|build/)\" -e .eslintrc.json ./",
     "test": "snyk test && npm run lint",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
@@ -56,7 +57,8 @@
   },
   "devDependencies": {
     "eslint": "^3.3.1",
-    "eslint-config-google": "^0.6.0"
+    "eslint-config-google": "^0.6.0",
+    "plato": "^1.7.0"
   },
   "snyk": true
 }
