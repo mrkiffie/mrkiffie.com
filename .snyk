@@ -1,0 +1,25 @@
+version: v1.5.2
+ignore: {}
+patch:
+  'npm:minimatch:20160620':
+    - metalsmith-dev > gaze > globule > glob > minimatch:
+        patched: '2016-08-26T16:58:41.531Z'
+      metalsmith > recursive-readdir > minimatch:
+        patched: '2016-08-26T17:31:00.215Z'
+    - metalsmith-dev > gaze > globule > minimatch:
+        patched: '2016-08-26T16:58:41.531Z'
+      metalsmith-prism > metalsmith > recursive-readdir > minimatch:
+        patched: '2016-08-26T17:31:00.215Z'
+    - metalsmith-autoprefixer > minimatch:
+        patched: '2016-08-26T16:58:41.531Z'
+    - metalsmith-collections > minimatch:
+        patched: '2016-08-26T16:58:41.531Z'
+  'npm:negotiator:20160616':
+    - metalsmith-dev > st > negotiator:
+        patched: '2016-08-26T16:58:41.531Z'
+  'npm:ms:20151024':
+    - metalsmith-watch > tiny-lr > debug > ms:
+        patched: '2016-08-26T17:31:00.215Z'
+  'npm:tough-cookie:20160722':
+    - nodemon > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2016-08-26T17:31:00.215Z'
