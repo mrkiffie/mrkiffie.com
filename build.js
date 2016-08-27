@@ -51,6 +51,9 @@ metalsmith(path.join(__dirname))
     minified: isProd
   }))
   .use(less({
+    render: {
+      compress: true
+    },
     useDynamicSourceMap: true
   }))
   .use(msif(
