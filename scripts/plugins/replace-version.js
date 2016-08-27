@@ -1,8 +1,8 @@
-module.exports = function replaceVersion() {
+module.exports = () => {
   'use strict';
-  return function(files, metalsmith, done) {
+  return (files, metalsmith, done) => {
     setImmediate(done);
-    let meta = metalsmith.metadata().package;
+    const meta = metalsmith.metadata().package;
     Object.keys(files).forEach(file => {
       if (/\.(js)$/.test(file)) {
         const data = files[file];

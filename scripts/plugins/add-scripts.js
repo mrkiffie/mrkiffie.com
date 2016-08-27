@@ -1,15 +1,16 @@
-module.exports = function addScripts() {
+module.exports = () => {
   'use strict';
-  return function(files, metalsmith, done) {
-    for (var file in files) {
+  return (files, metalsmith, done) => {
+    setImmediate(done);
+    Object.keys(files).forEach(file => {
       if (file.match(/\.md$/)) {
-        let scripts = files[file].scripts || [];
+        const scripts = files[file].scripts || [];
+        // Add `main.js` if not already included
         if (scripts.indexOf('main.js') === -1) {
           scripts.unshift('main.js');
         }
         files[file].scripts = scripts.map(script => `assets/js/${script}`);
       }
-    }
-    done();
+    });
   };
 };

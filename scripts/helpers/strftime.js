@@ -2,7 +2,7 @@ const strftime = require('strftime');
 
 module.exports = function(date, format) {
   'use strict';
-  let parsedDate = new Date(date);
+  const parsedDate = new Date(date);
 
   format = typeof format === 'string' && format ? format : '%e %b %Y';
 

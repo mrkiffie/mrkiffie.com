@@ -5,7 +5,7 @@ const staticCacheName = version + 'static';
 const pagesCacheName = version + 'pages';
 const imagesCacheName = version + 'images';
 
-function updateStaticCache() {
+const updateStaticCache = () => {
   return caches.open(staticCacheName)
     .then(cache => {
       // These items won't block the installation of the Service Worker
@@ -26,17 +26,17 @@ function updateStaticCache() {
         '/offline/'
       ]);
     });
-}
+};
 
-function stashInCache(cacheName, request, response) {
+const stashInCache = (cacheName, request, response) => {
   if (response.status === 200) {
     caches.open(cacheName)
       .then(cache => cache.put(request, response));
   }
-}
+};
 
 // Limit the number of items in a specified cache.
-function trimCache(cacheName, maxItems) {
+const trimCache = (cacheName, maxItems) => {
   caches.open(cacheName)
     .then(cache => {
       cache.keys()
@@ -47,18 +47,18 @@ function trimCache(cacheName, maxItems) {
           }
         });
     });
-}
+};
 
 // Remove caches whose name is no longer valid
-function clearOldCaches() {
+const clearOldCaches = () => {
   return caches.keys()
     .then(keys => {
       return Promise.all(keys
-        .filter(key => key.indexOf(version) !== 0)
+        .filter(key => !key.includes(version))
         .map(key => caches.delete(key))
       );
     });
-}
+};
 
 self.addEventListener('install', event => {
   event.waitUntil(updateStaticCache()
@@ -81,7 +81,7 @@ self.addEventListener('message', event => {
 
 self.addEventListener('fetch', event => {
   let request = event.request;
-  let url = new URL(request.url);
+  const url = new URL(request.url);
 
   // Limit scope of handling requests to current domain
   if (url.origin !== location.origin) {
@@ -92,7 +92,7 @@ self.addEventListener('fetch', event => {
   // try the network first,
   // fall back to the cache,
   // finally the offline page
-  if (request.headers.get('Accept').indexOf('text/html') !== -1) {
+  if (request.headers.get('Accept').includes('text/html')) {
     request = new Request(url, {
       method: 'GET',
       headers: request.headers,
@@ -105,8 +105,7 @@ self.addEventListener('fetch', event => {
         .then(response => {
           // NETWORK
           // Stash a copy of this page in the pages cache
-          let copy = response.clone();
-          stashInCache(pagesCacheName, request, copy);
+          stashInCache(pagesCacheName, request, response.clone());
           return response;
         })
         .catch(() => {
@@ -128,16 +127,15 @@ self.addEventListener('fetch', event => {
             // NETWORK
             // If the request is for an image,
             // stash a copy of this image in the images cache
-            if (request.headers.get('Accept').indexOf('image') !== -1) {
-              let copy = response.clone();
-              stashInCache(imagesCacheName, request, copy);
+            if (request.headers.get('Accept').includes('image')) {
+              stashInCache(imagesCacheName, request, response.clone());
             }
             return response;
           })
           .catch(() => {
             // OFFLINE
             // If the request is for an image, show an offline placeholder
-            if (request.headers.get('Accept').indexOf('image') !== -1) {
+            if (request.headers.get('Accept').includes('image')) {
               return caches.match('/assets/img/offline.svg');
             }
           });

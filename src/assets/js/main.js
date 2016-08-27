@@ -5,7 +5,7 @@ if (navigator.serviceWorker) {
   });
 
   // Do some clean up
-  window.addEventListener('load', function() {
+  window.addEventListener('load', () => {
     if (navigator.serviceWorker.controller) {
       navigator.serviceWorker.controller.postMessage({command: 'trimCaches'});
     }

@@ -1,8 +1,8 @@
-module.exports = function fingerprintmeta() {
+module.exports = () => {
   'use strict';
-  return function(files, metalsmith, done) {
+  return (files, metalsmith, done) => {
     setImmediate(done);
-    let map = metalsmith.metadata().fingerprint;
+    const map = metalsmith.metadata().fingerprint;
     Object.keys(files).forEach(file => {
       if (/\.(html|js)$/.test(file)) {
         const data = files[file];
@@ -14,8 +14,7 @@ module.exports = function fingerprintmeta() {
         }
         let contents = data.contents.toString();
         Object.keys(map).forEach(find => {
-          const replace = map[find];
-          contents = contents.split(find).join(replace);
+          contents = contents.split(find).join(map[find]);
         });
         data.contents = new Buffer(contents);
       }

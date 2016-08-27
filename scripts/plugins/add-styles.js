@@ -1,15 +1,16 @@
-module.exports = function addstyles() {
+module.exports = () => {
   'use strict';
-  return function(files, metalsmith, done) {
-    for (var file in files) {
+  return (files, metalsmith, done) => {
+    setImmediate(done);
+    Object.keys(files).forEach(file => {
       if (file.match(/\.md$/)) {
-        let styles = files[file].styles || [];
+        const styles = files[file].styles || [];
+        // Add `styles.css` if not already included
         if (styles.indexOf('styles.css') === -1) {
           styles.unshift('styles.css');
         }
         files[file].styles = styles.map(style => `assets/css/${style}`);
       }
-    }
-    done();
+    });
   };
 };

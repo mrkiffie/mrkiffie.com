@@ -1,14 +1,12 @@
 if (window.caches) {
   // Display posts that are available offline
   caches.open('v{{ PACKAGE.VERSION }}::pages')
-    .then(function(cache) {
+    .then(cache => {
       cache.keys()
-        .then(function(keys) {
-          var cachedUrls = keys.map(function(req) {
-            return req.url;
-          });
+        .then(keys => {
+          const cachedUrls = keys.map(req => req.url);
           [].slice.call(document.querySelectorAll('main a')).forEach(a => {
-            if (cachedUrls.indexOf(a.href) > -1) {
+            if (cachedUrls.includes(a.href)) {
               a.parentNode.hidden = false;
             }
           });
