@@ -4,7 +4,7 @@ module.exports = () => {
     setImmediate(done);
     const map = metalsmith.metadata().fingerprint;
     Object.keys(files).forEach(file => {
-      if (/\.(html|js)$/.test(file)) {
+      if (/\.(html|js|json)$/.test(file)) {
         const data = files[file];
         if (data.styles) {
           data.styles = data.styles.map(style => map[style]);
