@@ -9,9 +9,7 @@
     "lint": "node_modules/eslint/bin/eslint.js --ignore-path .gitignore .",
     "deploy": "npm run build && deploy.sh -c .env",
     "analysis": "plato -r -n -d analysis -x \"(node_modules/|analysis/|build/)\" -e .eslintrc.json ./",
-    "test": "snyk test && npm run lint",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -51,7 +49,6 @@
     "mkdirp": "^0.5.1",
     "multimatch": "^2.1.0",
     "nodemon": "^1.10.2",
-    "snyk": "^1.19.1",
     "strftime": "^0.9.2",
     "yargs": "^5.0.0"
   },
@@ -59,6 +56,5 @@
     "eslint": "^3.6.1",
     "eslint-config-google": "^0.6.0",
     "plato": "^1.7.0"
-  },
-  "snyk": true
+  }
 }
