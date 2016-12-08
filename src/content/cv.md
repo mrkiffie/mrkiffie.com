@@ -19,7 +19,7 @@ HTML, CSS, JavaScript, Node.js, git
 
 ### Web Developer at [Spree.co.za](https://www.spree.co.za)
 
-Nov 2014 - Present
+Nov 2014 - Nov 2016
 
 - Maintain and develop the client facing e-commerce site, database through front-end
 - Develop and maintain node.js applications in a microservices oriented architecture
