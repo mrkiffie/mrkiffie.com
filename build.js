@@ -33,6 +33,7 @@ const fingerprintMeta = require('./scripts/plugins/fingerprint-meta');
 const addStyle = require('./scripts/plugins/add-styles');
 const addScript = require('./scripts/plugins/add-scripts');
 const replaceVersion = require('./scripts/plugins/replace-version');
+const updateMarkdownToHtml = require('./scripts/plugins/update-md-to-html');
 
 const isDev = yargs.env === 'dev';
 const isProd = yargs.env === 'prod';
@@ -86,6 +87,7 @@ metalsmith(path.join(__dirname))
     langPrefix: 'language-',
     renderer: new marked.Renderer()
   }))
+  .use(updateMarkdownToHtml())
   .use(prism())
   .use(permalinks({
     relative: false
