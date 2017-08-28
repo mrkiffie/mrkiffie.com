@@ -17,6 +17,7 @@ This is how the timeline goes:
 - 2009 - 2012: Started using php to create dynamic sites and developing custom wordpress sites (freelance)
 - 2012 - 2014: Web developer at [Creative Spark](http://www.creativespark.co.za/)
 - 2014 - 2016: Web developer at [Spree](https://www.spree.co.za)
+- 2017 - current: Software Engineer at [Kurtosys](https://www.kurtosys.com/)
 
 
 ### Music
