@@ -41,10 +41,10 @@ Nov 2014 - Nov 2016
 
 Sep 2012 - Oct 2014
 
-- Created custom WordPress themes for clients, both desktop and mobile, in the news and media industry.
-- Created custom WordPress plugins to support additional functionality.
-- Created custom import scripts to migrate and transform data.
-- Integrated grunt build step in to projects to optimise assets.
+- Created custom WordPress themes for clients, both desktop and mobile, in the news and media industry
+- Created custom WordPress plugins to support additional functionality
+- Created custom import scripts to migrate and transform data
+- Integrated grunt build step in to projects to optimise assets
 - Managed the staging environments
 - Managed deployments
 - Mentored junior developers
