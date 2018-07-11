@@ -1,177 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Anatomy of a JavaScript function | mrkiffie.com</title>
-
-    <meta name="author" content="mrkiffie">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="canonical" href="https://mrkiffie.com/2017/anatomy-of-a-javascript-function/">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="manifest" href="/manifest.json">
-
-            <link rel="stylesheet" href="/assets/css/styles-e0c5db6f0b73c58b432286fb1d006868.css" media="all">
-            <link rel="stylesheet" href="/assets/css/prism-9447029b855d2852d32e461a8c0f5729.css" media="all">
-            <link rel="stylesheet" href="/assets/css/fancy-quotes-b49d96fdd613180d167a875328fd7743.css" media="all">
-</head>
-
-<body>
-    <header role="banner">
-        <h1>
-            <a href="/" title="mrkiffie.com" class="logo"><img src="/assets/img/kiffie-144x144-84eee0bbb8fea04de91bbd15bdd31fc2.jpg" alt="mrkiffie.com" width="144" height="144"></a>
-        </h1>
-    </header>
-
-    <main role="main">
-
-        <article>
-            <header>
-                <time datetime="2017-08-28">28 Aug 2017</time>
-                <h1>Anatomy of a JavaScript function</h1>
-            </header>
-
-            <p>The name &quot;function&quot; comes from Mathematics. It is used to calculate a value based on input.</p>
-<p><img src="/assets/img/f-of-x-29622c72e1a82182c5f80abf113756cc.svg" alt="f(x) = x + 3
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Anatomy of a JavaScript function | mrkiffie.com</title><meta name="author" content="mrkiffie"><meta name="robots" content="index, follow"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="canonical" href="https://mrkiffie.com/2017/anatomy-of-a-javascript-function/"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/assets/css/styles-e0c5db6f0b73c58b432286fb1d006868.css" media="all"><link rel="stylesheet" href="/assets/css/prism-9447029b855d2852d32e461a8c0f5729.css" media="all"><link rel="stylesheet" href="/assets/css/fancy-quotes-b49d96fdd613180d167a875328fd7743.css" media="all"></head><body><header role="banner"><h1><a href="/" title="mrkiffie.com" class="logo"><img src="/assets/img/kiffie-144x144-84eee0bbb8fea04de91bbd15bdd31fc2.jpg" alt="mrkiffie.com" width="144" height="144"></a></h1></header><main role="main"><article><header><time datetime="2017-08-28">28 Aug 2017</time><h1>Anatomy of a JavaScript function</h1></header><p>The name &quot;function&quot; comes from Mathematics. It is used to calculate a value based on input.</p><p><img src="/assets/img/f-of-x-29622c72e1a82182c5f80abf113756cc.svg" alt="f(x) = x + 3
 if x = 2 then
-f(2) = 2 + 3 = 5"></p>
-<p>In computing, a function is a sequence of instructions within a larger computer program.</p>
-<p><a href="https://en.wikipedia.org/wiki/Pascal_%28programming_language%29#Procedures_and_functions">Pascal</a> has the keywords <code>procedure</code> and <code>function</code>. The distinction being that a <code>function</code> always return a value while <code>procedure</code> just executes commands.</p>
-<p>In object-oriented languages, a <code>function</code> that is part of a <code>class</code> is often referred to as a &quot;method&quot;</p>
-<h2 id="the-function-returns-">The function returns!</h2>
-<p>Sort of sounds like the sequal to some epic Javascript drama.</p>
-<p>In JavaScript, a function <em>always</em> returns a value. The default return value of a function is <code>undefined</code>.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+f(2) = 2 + 3 = 5"></p><p>In computing, a function is a sequence of instructions within a larger computer program.</p><p><a href="https://en.wikipedia.org/wiki/Pascal_%28programming_language%29#Procedures_and_functions">Pascal</a> has the keywords <code>procedure</code> and <code>function</code>. The distinction being that a <code>function</code> always return a value while <code>procedure</code> just executes commands.</p><p>In object-oriented languages, a <code>function</code> that is part of a <code>class</code> is often referred to as a &quot;method&quot;</p><h2 id="the-function-returns-">The function returns!</h2><p>Sort of sounds like the sequal to some epic Javascript drama.</p><p>In JavaScript, a function <em>always</em> returns a value. The default return value of a function is <code>undefined</code>.</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;Hi!!!&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// &quot;Hi!!!&quot;</span>
-<span class="token comment" spellcheck="true">// undefined</span>
-</code></pre>
-<p>The return statement ends function execution and specifies a value to be returned to the function caller.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">countSheep</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">// &quot;Hi!!!&quot;</span>
+<span class="token comment">// undefined</span>
+</code></pre><p>The return statement ends function execution and specifies a value to be returned to the function caller.</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">countSheep</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token string">&apos;ZZZzzzzz...&apos;</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// we never reach this point</span>
+    <span class="token comment">// we never reach this point</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token function">countSheep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 1</span>
-<span class="token comment" spellcheck="true">// 2</span>
-<span class="token comment" spellcheck="true">// 3</span>
-<span class="token comment" spellcheck="true">// &quot;ZZZzzzzz...&quot;</span>
-</code></pre>
-<h2 id="the-function-signature">The function signature</h2>
-<p>A function can have 0, 1 or many <em>parameters</em>. The order of these paramaters determine the function&apos;s <em>signature</em>. The number of paramaters is called <em>arity</em>.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token comment" spellcheck="true">/* This is where the params go */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">// 1</span>
+<span class="token comment">// 2</span>
+<span class="token comment">// 3</span>
+<span class="token comment">// &quot;ZZZzzzzz...&quot;</span>
+</code></pre><h2 id="the-function-signature">The function signature</h2><p>A function can have 0, 1 or many <em>parameters</em>. The order of these paramaters determine the function&apos;s <em>signature</em>. The number of paramaters is called <em>arity</em>.</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token comment">/* This is where the params go */</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
-</code></pre>
-<h2 id="the-function-body">The function body</h2>
-<p>Following the signature is the <em>function body</em>. The function body contains the sequence of instructions to be performed composed of <em>statements</em> and <em>expressions</em>.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// The start of the function body</span>
+</code></pre><h2 id="the-function-body">The function body</h2><p>Following the signature is the <em>function body</em>. The function body contains the sequence of instructions to be performed composed of <em>statements</em> and <em>expressions</em>.</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// The start of the function body</span>
     statement<span class="token punctuation">;</span>
     statement<span class="token punctuation">;</span>
     <span class="token keyword">return</span> expression<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// The end of the function body</span>
+    <span class="token comment">// The end of the function body</span>
 <span class="token punctuation">}</span>
-</code></pre>
-<blockquote>
-<p>JavaScript distinguishes <em>expressions</em> and <em>statements</em>. An expression produces a value and can be written wherever a value is expected, for example as an argument in a function call.</p>
-</blockquote>
-<p>For more on this distinction, give Dr. Axel Rauschmayer&apos;s <a href="http://2ality.com/2012/09/expressions-vs-statements.html">Expressions versus Statements in JavaScript</a> a read.</p>
-<h2 id="function-declaration">Function Declaration</h2>
-<p>The function declaration defines a <code>function</code> with the specified parameters.</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn1</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> paramN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// statements</span>
+</code></pre><blockquote><p>JavaScript distinguishes <em>expressions</em> and <em>statements</em>. An expression produces a value and can be written wherever a value is expected, for example as an argument in a function call.</p></blockquote><p>For more on this distinction, give Dr. Axel Rauschmayer&apos;s <a href="http://2ality.com/2012/09/expressions-vs-statements.html">Expressions versus Statements in JavaScript</a> a read.</p><h2 id="function-declaration">Function Declaration</h2><p>The function declaration defines a <code>function</code> with the specified parameters.</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn1</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> paramN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// statements</span>
 <span class="token punctuation">}</span>
-</code></pre>
-<h2 id="function-expression">Function Expression</h2>
-<p>The <code>function</code> keyword can be used to define a function inside an expression. These can be either &quot;named&quot; or &quot;anonymous&quot; function.</p>
-<h3 id="named-function-expression">Named function expression</h3>
-<p>This function has the name &quot;Bob&quot;. Bob is used in an assignment expression. This combination is known as a &quot;named function expression&quot;</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fn2</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">Bob</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> paramN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// statements</span>
+</code></pre><h2 id="function-expression">Function Expression</h2><p>The <code>function</code> keyword can be used to define a function inside an expression. These can be either &quot;named&quot; or &quot;anonymous&quot; function.</p><h3 id="named-function-expression">Named function expression</h3><p>This function has the name &quot;Bob&quot;. Bob is used in an assignment expression. This combination is known as a &quot;named function expression&quot;</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fn2</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">Bob</span><span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> paramN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// statements</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<h3 id="anonymous-function-expression">Anonymous function expression</h3>
-<p>This function does not have a name (aka anonymous). This anonymous function is used in an assigned expression. This combination is called an &quot;anonymous function expression&quot;</p>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fn3</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> paramN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// statements</span>
+</code></pre><h3 id="anonymous-function-expression">Anonymous function expression</h3><p>This function does not have a name (aka anonymous). This anonymous function is used in an assigned expression. This combination is called an &quot;anonymous function expression&quot;</p><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fn3</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>param1<span class="token punctuation">,</span> param2<span class="token punctuation">,</span> paramN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// statements</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<p>I&apos;m sure this is gonna blow someone&apos;s mind...</p>
-<h2 id="some-points-about-arrow-functions">Some points about arrow functions</h2>
-<ul>
-<li>Arrow functions have a shorter syntax than a regular function.</li>
-</ul>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> x <span class="token operator">=&gt;</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// vs</span>
+</code></pre><p>I&apos;m sure this is gonna blow someone&apos;s mind...</p><h2 id="some-points-about-arrow-functions">Some points about arrow functions</h2><ul><li>Arrow functions have a shorter syntax than a regular function.</li></ul><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> x <span class="token operator">=&gt;</span> x <span class="token operator">*</span> x<span class="token punctuation">;</span>
+<span class="token comment">// vs</span>
 <span class="token keyword">const</span> <span class="token function-variable function">bar</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> x <span class="token operator">*</span> x <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>Arrow functions are always used as <em>expressions</em>.</li>
-</ul>
-<pre class="language-js"><code class="language-js">Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+</code></pre><ul><li>Arrow functions are always used as <em>expressions</em>.</li></ul><pre class="language-js"><code class="language-js">Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;defined inline as an expression&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>An arrow function expression does not bind its own <code>this</code>, <code>arguments</code>, <code>super</code>, or <code>new.target</code>. These function expressions are best suited for non-method functions, and they cannot be used as constructors. Not having it&apos;s own context is very useful.</li>
-</ul>
-<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">greetMeLater</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre><ul><li>An arrow function expression does not bind its own <code>this</code>, <code>arguments</code>, <code>super</code>, or <code>new.target</code>. These function expressions are best suited for non-method functions, and they cannot be used as constructors. Not having it&apos;s own context is very useful.</li></ul><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">greetMeLater</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 greetMeLater<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">&quot;Alice&quot;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>Multiple <em>statements</em> need to be enclosed in brackets.</li>
-</ul>
-<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fn4</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+</code></pre><ul><li>Multiple <em>statements</em> need to be enclosed in brackets.</li></ul><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">fn4</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> words <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     words<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;Over&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     words<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;Engineered&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     words<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">fromCodePoint</span><span class="token punctuation">(</span><span class="token number">128169</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> words<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&quot; &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>A single <em>expression</em> requires no brackets. The expression is also the implicit return value of the function.</li>
-</ul>
-<pre class="language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x <span class="token operator">*</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// [1, 4, 9]</span>
+</code></pre><ul><li>A single <em>expression</em> requires no brackets. The expression is also the implicit return value of the function.</li></ul><pre class="language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>x <span class="token operator">=&gt;</span> x <span class="token operator">*</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [1, 4, 9]</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">done</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token string">&quot;And thats about it for now... Cheers&quot;</span><span class="token punctuation">;</span>
 <span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// &quot;And thats about it for now... Cheers&quot;</span>
-</code></pre>
-
-        </article>
-
-    </main>
-
-    <hr class="screen-reader-text">
-    <footer role="contentinfo">
-        <ul>
-            <li><a href="/" title="Go to the home page">Home</a></li>
-            <li><a href="/about/" title="Information about me">About</a></li>
-            <li><a href="http://codepen.io/mrkiffie" title="View some of my creations on Codepen">Codepen</a></li>
-            <li><a href="https://github.com/mrkiffie" title="Follow my involvement in various open source projects on Github">Github</a></li>
-        </ul>
-        <small>
-            <span> -- .- -.. . </span> &nbsp;&nbsp; <span> .-- .. - .... </span> &nbsp;&nbsp; <span> .-.. --- ...- .</span>
-        </small>
-        <p>&copy;<span class="screen-reader-text">Copyright</span> 2011-2018 Kiffie&nbsp;Liversage</p>
-    </footer>
-    
-            <script src="/assets/js/main-32ce3efb9c984dcd0f12c254d011c135.js"></script>
-    
-    <script>
-    (function(s,i,m,p,l,e,r){s['GoogleAnalyticsObject']=l;s[l]=s[l]||function(){(s[l].q=s[l].q||[]).push(arguments)},s[l].l=1*new Date();e=i.createElement(m),r=i.getElementsByTagName(m)[0];e.async=1;e.src=p;r.parentNode.insertBefore(e,r)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-24126980-1','auto');ga('send','pageview');
-    </script>
-</body>
-</html>
+<span class="token comment">// &quot;And thats about it for now... Cheers&quot;</span>
+</code></pre></article></main><hr class="screen-reader-text"><footer role="contentinfo"><ul><li><a href="/" title="Go to the home page">Home</a></li><li><a href="/about/" title="Information about me">About</a></li><li><a href="http://codepen.io/mrkiffie" title="View some of my creations on Codepen">Codepen</a></li><li><a href="https://github.com/mrkiffie" title="Follow my involvement in various open source projects on Github">Github</a></li></ul><small><span>-- .- -.. . </span>&nbsp;&nbsp; <span>.-- .. - .... </span>&nbsp;&nbsp; <span>.-.. --- ...- .</span></small><p>&copy;<span class="screen-reader-text">Copyright</span> 2011-2018 Kiffie&nbsp;Liversage</p></footer><script src="/assets/js/main-ecb2c5597aca5c9f307012fc6f797964.js"></script><script>(function(s,i,m,p,l,e,r){s['GoogleAnalyticsObject']=l;s[l]=s[l]||function(){(s[l].q=s[l].q||[]).push(arguments)},s[l].l=1*new Date();e=i.createElement(m),r=i.getElementsByTagName(m)[0];e.async=1;e.src=p;r.parentNode.insertBefore(e,r)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-24126980-1','auto');ga('send','pageview');</script></body></html>
