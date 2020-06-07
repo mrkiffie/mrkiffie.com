@@ -18,14 +18,13 @@ _Aside:_ I would recommend reading [The Great Newline Schism] by Jeff Atwood to 
 
 For the purpose of clarity, we'll be using `\n` for newlines characters - it is a common abstraction in many programming languages for newlines.
 
-
 ## No newline at end of file
 
 The message indicates that you do not have a newline at the end of the file. You may be asking:
+
 > So what is the significance?
 
 Let's do a little experimenting on the command line to see how `git` handles things:
-
 
 ### Newline Experiment
 
@@ -33,15 +32,15 @@ Let's do a little experimenting on the command line to see how `git` handles thi
 
 1. We will start by creating a new directory for our experiment.
 
-- In this new directory we will create an empty `git` repository by typing `git init`.
+-   In this new directory we will create an empty `git` repository by typing `git init`.
 
-- Now we will create an empty file called `foo.txt` using `touch foo.txt`.
+-   Now we will create an empty file called `foo.txt` using `touch foo.txt`.
 
-- Staging the empty file in the `git` repository will allow us to compare upcoming changes against it. Stage the file using `git add foo.txt`.
+-   Staging the empty file in the `git` repository will allow us to compare upcoming changes against it. Stage the file using `git add foo.txt`.
 
-- Add "Hello" to the file - `printf 'Hello' >> foo.txt`. We are explicitly adding the text __without__ a new line at the end. `echo` adds a newline by default. `printf` does not add a newline by default.
+-   Add "Hello" to the file - `printf 'Hello' >> foo.txt`. We are explicitly adding the text **without** a new line at the end. `echo` adds a newline by default. `printf` does not add a newline by default.
 
-- Now that we have added some content we can see what the diff generates. Running `git diff` will output the following:
+-   Now that we have added some content we can see what the diff generates. Running `git diff` will output the following:
 
 ```diff
 diff --git a/foo.txt b/foo.txt
@@ -53,9 +52,9 @@ index e69de29..5ab2f8a 100644
 \ No newline at end of file
 ```
 
-__Notice__ the `\ No newline at end of file` message below the "Hello".
+**Notice** the `\ No newline at end of file` message below the "Hello".
 
-The diff's output is rendered __with__ a newline at the end of the "Hello" to make it easier to consume programmatically.
+The diff's output is rendered **with** a newline at the end of the "Hello" to make it easier to consume programmatically.
 The `No newline at end of file` message is appended to indicate that the newline is actually missing from that file.
 
 A newline character is always at the end of the line.
@@ -68,9 +67,9 @@ OK, let's get back to this experiment
 
 1. Let's stage the file again so we can see the effect of adding more lines - `git add foo.txt`
 
-- This time we will add "World" on a newline - `printf '\nWorld\n' >> foo.txt`. Note how we have added `\n` before and after "World".
+-   This time we will add "World" on a newline - `printf '\nWorld\n' >> foo.txt`. Note how we have added `\n` before and after "World".
 
-- What is the diff now? - `git diff`
+-   What is the diff now? - `git diff`
 
 ```diff
 diff --git a/foo.txt b/foo.txt
@@ -86,22 +85,21 @@ index 5ab2f8a..f9264f7 100644
 
 The diff reveals the following:
 
-- We have explicitly added a newline character to the end of "Hello". This newline character is residing at the end of the first line. The first line shows up in the diff as modified although there is no visible change. The "No newline at end of file" from the previous set of changes is gone.
+-   We have explicitly added a newline character to the end of "Hello". This newline character is residing at the end of the first line. The first line shows up in the diff as modified although there is no visible change. The "No newline at end of file" from the previous set of changes is gone.
 
-- We also added an explicit newline character after "World". There is no "No newline at end of file" after the second line.
+-   We also added an explicit newline character after "World". There is no "No newline at end of file" after the second line.
 
 > What about adding another line?
 
 OK, lets see what happens when we add another line.
 
-
 #### Part 3 - Adding content after a newline
 
 1. We will stage the current changes so we can get a clean diff - `git add foo.txt`
 
-- Let us add "!" on the third line - `echo '!' >> foo.txt`. We use echo here to get the benefit of appending a newline character by default.
+-   Let us add "!" on the third line - `echo '!' >> foo.txt`. We use echo here to get the benefit of appending a newline character by default.
 
-- Now we can have a look at the diff
+-   Now we can have a look at the diff
 
 ```diff
 diff --git a/foo.txt b/foo.txt
@@ -124,7 +122,7 @@ OK, there is just one thing missing&hellip;
 
 1. Stage the most recent changes again - `git add foo.txt`
 
-- We will now apply a patch using an existing diff. Create a new file called `add-beautiful.diff` and add following snippet to it.
+-   We will now apply a patch using an existing diff. Create a new file called `add-beautiful.diff` and add following snippet to it.
 
 ```diff
 diff --git a/foo.txt b/foo.txt
@@ -138,13 +136,13 @@ index a9a7f7a..9a4c951 100644
  !
 ```
 
-__Note:__ We can generate our own patch by using the output generated by `git diff` and send the output to a file - `git diff >> <filename>`.
+**Note:** We can generate our own patch by using the output generated by `git diff` and send the output to a file - `git diff >> <filename>`.
 
 #### Part 5 - Apply a patch
 
 1. Now we can apply the patch which will update our `foo.txt`. To do this we use `git apply add-beautiful.diff`
 
-- If we now do diff - `git diff`
+-   If we now do diff - `git diff`
 
 ```diff
 diff --git a/foo.txt b/foo.txt
@@ -158,10 +156,9 @@ index a9a7f7a..9a4c951 100644
  !
 ```
 
-__Notice__ how the output is the same as was the patch we applied.
+**Notice** how the output is the same as was the patch we applied.
 
-This is __not__ a coincidence. Remember that a diff is a format that can easily be consumed programmatically.
-
+This is **not** a coincidence. Remember that a diff is a format that can easily be consumed programmatically.
 
 ### My take on it
 
@@ -169,34 +166,31 @@ This is __not__ a coincidence. Remember that a diff is a format that can easily 
 
 Managing different configurations across different projects can be tedious. The solution that I've found most helpful is adding a [`.editorconfig`] file to a project and installing the [EditorConfig plugins] corresponding to my editors.
 
-
 ## Conclusion
 
 Commands that we have covered during this post:
 
-- `git init` creates an empty git repository.
+-   `git init` creates an empty git repository.
 
-- `touch <filename>` creates a blank file with the given name.
+-   `touch <filename>` creates a blank file with the given name.
 
-- `git add <filename>` will stage the file. This is normally used as a way to add certain changes to particular commits. We have misused it to generate diffs by comparing the unstaged changes against the staged changes.
+-   `git add <filename>` will stage the file. This is normally used as a way to add certain changes to particular commits. We have misused it to generate diffs by comparing the unstaged changes against the staged changes.
 
-- `printf` does __not__ include a newline character at the end of the content by default.
+-   `printf` does **not** include a newline character at the end of the content by default.
 
-- `echo` does include a newline character at the end of the content by default.
+-   `echo` does include a newline character at the end of the content by default.
 
-- `git diff` compares unstaged changes against the staged files (If there are no staged files, it defaults to the previous commit).
+-   `git diff` compares unstaged changes against the staged files (If there are no staged files, it defaults to the previous commit).
 
-- `git apply` allowed us to apply a patch on our files. It is important to note that the file extension `.diff` is only a convention and does not impact `git`'s ability to use it.
-
+-   `git apply` allowed us to apply a patch on our files. It is important to note that the file extension `.diff` is only a convention and does not impact `git`'s ability to use it.
 
 So hopefully you now have a better understanding of why `git` keeps pointing out the "No newline at end of file".
 
 Now go out and enjoy the beautiful world!
 
-
-[The Great Newline Schism]: http://blog.codinghorror.com/the-great-newline-schism/
+[the great newline schism]: http://blog.codinghorror.com/the-great-newline-schism/
 [carriage return]: https://en.wikipedia.org/wiki/Carriage_return
 [line feed]: https://en.wikipedia.org/wiki/Newline
 [control character]: https://en.wikipedia.org/wiki/Control_character
 [`.editorconfig`]: http://editorconfig.org/
-[EditorConfig plugins]: http://editorconfig.org/#download
+[editorconfig plugins]: http://editorconfig.org/#download

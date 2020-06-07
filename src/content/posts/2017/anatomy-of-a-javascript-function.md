@@ -28,7 +28,7 @@ In JavaScript, a function _always_ returns a value. The default return value of 
 
 ```js
 function sayHi() {
-    console.log('Hi!!!');
+    console.log("Hi!!!");
 }
 sayHi();
 // "Hi!!!"
@@ -42,7 +42,7 @@ function countSheep() {
     console.log(1);
     console.log(2);
     console.log(3);
-    return 'ZZZzzzzz...';
+    return "ZZZzzzzz...";
     // we never reach this point
     console.log(4);
     console.log(5);
@@ -87,7 +87,7 @@ The function declaration defines a `function` with the specified parameters.
 
 ```js
 function fn1(param1, param2, paramN) {
-  // statements
+    // statements
 }
 ```
 
@@ -101,7 +101,7 @@ This function has the name "Bob". Bob is used in an assignment expression. This 
 
 ```js
 const fn2 = function Bob(param1, param2, paramN) {
-  // statements
+    // statements
 };
 ```
 
@@ -111,7 +111,7 @@ This function does not have a name (aka anonymous). This anonymous function is u
 
 ```js
 const fn3 = function (param1, param2, paramN) {
-  // statements
+    // statements
 };
 ```
 
@@ -119,32 +119,34 @@ I'm sure this is gonna blow someone's mind...
 
 ## Some points about arrow functions
 
-* Arrow functions have a shorter syntax than a regular function.
+-   Arrow functions have a shorter syntax than a regular function.
 
 ```js
-const foo = x => x * x;
+const foo = (x) => x * x;
 // vs
-const bar = function (x) { return x * x };
+const bar = function (x) {
+    return x * x;
+};
 ```
 
-* Arrow functions are always used as _expressions_.
+-   Arrow functions are always used as _expressions_.
 
 ```js
 Promise.resolve().then(() => {
-    console.log('defined inline as an expression');
+    console.log("defined inline as an expression");
 });
 ```
 
-* An arrow function expression does not bind its own `this`, `arguments`, `super`, or `new.target`. These function expressions are best suited for non-method functions, and they cannot be used as constructors. Not having it's own context is very useful.
+-   An arrow function expression does not bind its own `this`, `arguments`, `super`, or `new.target`. These function expressions are best suited for non-method functions, and they cannot be used as constructors. Not having it's own context is very useful.
 
 ```js
 function greetMeLater() {
     setTimeout(() => console.log(`Hello ${this.name}`), 1000);
 }
-greetMeLater.call({name: "Alice"});
+greetMeLater.call({ name: "Alice" });
 ```
 
-* Multiple _statements_ need to be enclosed in brackets.
+-   Multiple _statements_ need to be enclosed in brackets.
 
 ```js
 const fn4 = () => {
@@ -156,10 +158,10 @@ const fn4 = () => {
 };
 ```
 
-* A single _expression_ requires no brackets. The expression is also the implicit return value of the function.
+-   A single _expression_ requires no brackets. The expression is also the implicit return value of the function.
 
 ```js
-[1, 2, 3].map(x => x * x);
+[1, 2, 3].map((x) => x * x);
 // [1, 4, 9]
 
 const done = () => "And thats about it for now... Cheers";

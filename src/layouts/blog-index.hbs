@@ -14,14 +14,14 @@
 
             <ul>
                 {{#each collections.posts}}
-                    {{#startswith path ../path}}
-                        {{#unless listing}}
-                            <li>
-                                <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
-                                <a href="/{{path}}/">{{title}}</a>
-                            </li>
-                        {{/unless}}
-                    {{/startswith}}
+                {{#startswith path ../path}}
+                {{#unless listing}}
+                <li>
+                    <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
+                    <a href="/{{path}}/">{{title}}</a>
+                </li>
+                {{/unless}}
+                {{/startswith}}
                 {{/each}}
             </ul>
 
@@ -30,4 +30,5 @@
 
     {{>footer}}
 </body>
+
 </html>

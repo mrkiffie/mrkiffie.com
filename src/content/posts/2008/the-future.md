@@ -4,6 +4,7 @@ date: 2008-04-25 10:55:55 +02:00
 category: "random"
 layout: blog-post.hbs
 ---
+
 finding out what it is that makes me tick. i know of stuff the ticks me off – surely it can’t be that. i’ve came to a point where i’ve plotted out that which makes me fulfilled and i believe effective as a result.
 
 these are a few of the things that bring me to life:
@@ -20,7 +21,7 @@ values – stewardship, respect, even just to instill the basic concept of a val
 
 family – i want a family – healthy and loved
 
-so now what does this look like in a big stewing pot? a traveling musician who tells stories while on a computer, mentoring those he comes in contact with? 
+so now what does this look like in a big stewing pot? a traveling musician who tells stories while on a computer, mentoring those he comes in contact with?
 don’t forget his family!
 
 is an option of all these available?

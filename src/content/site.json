@@ -1,27 +1,26 @@
 {
-    "title": "mrkiffie.com",
-    "author": "mrkiffie",
-    "url": "https://mrkiffie.com/",
-    "locale": "en",
-    "home": {
-        "link": "/",
-        "text": "Home",
-        "title": "Go to the home page"
-    },
-    "about": {
-        "link": "/about/",
-        "text": "About",
-        "title": "Information about me"
-    },
-   "codepen": {
-        "link": "http://codepen.io/mrkiffie",
-        "text": "Codepen",
-        "title": "View some of my creations on Codepen"
-    },
-   "github": {
-        "link": "https://github.com/mrkiffie",
-        "text": "Github",
-        "title": "Follow my involvement in various open source projects on Github"
-    }
-
+  "title": "mrkiffie.com",
+  "author": "mrkiffie",
+  "url": "https://mrkiffie.com/",
+  "locale": "en",
+  "home": {
+    "link": "/",
+    "text": "Home",
+    "title": "Go to the home page"
+  },
+  "about": {
+    "link": "/about/",
+    "text": "About",
+    "title": "Information about me"
+  },
+  "codepen": {
+    "link": "http://codepen.io/mrkiffie",
+    "text": "Codepen",
+    "title": "View some of my creations on Codepen"
+  },
+  "github": {
+    "link": "https://github.com/mrkiffie",
+    "text": "Github",
+    "title": "Follow my involvement in various open source projects on Github"
+  }
 }

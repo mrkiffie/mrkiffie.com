@@ -14,12 +14,12 @@
 
             <ul>
                 {{#each collections.posts}}
-                    {{#unless listing}}
-                        <li hidden>
-                            <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
-                            <a href="/{{path}}/">{{title}}</a>
-                        </li>
-                    {{/unless}}
+                {{#unless listing}}
+                <li hidden>
+                    <time datetime="{{strftime date "%F"}}">{{strftime date}}</time>
+                    <a href="/{{path}}/">{{title}}</a>
+                </li>
+                {{/unless}}
                 {{/each}}
             </ul>
 
@@ -28,4 +28,5 @@
 
     {{>footer}}
 </body>
+
 </html>
