@@ -7,7 +7,7 @@
     "start": "NODE_ENV=development nodemon --watch build.mjs --watch scripts build.mjs",
     "build": "rm -rf build/ && NODE_ENV=production node build.mjs",
     "lint": "node_modules/eslint/bin/eslint.js --ignore-path .gitignore . --fix",
-    "deploy": "npm run build && deploy.sh -c .env",
+    "deploy": "npm run build && ./deploy.sh -c .env",
     "analysis": "plato -r -n -d analysis -x \"(node_modules/|analysis/|build/)\" -e .eslintrc.json ./",
     "test": "npm run lint"
   },
