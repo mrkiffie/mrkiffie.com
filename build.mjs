@@ -24,7 +24,7 @@ import prism from "metalsmith-prism";
 import serve from "metalsmith-serve";
 import watch from "metalsmith-watch";
 
-import importJson from "./scripts/helpers/importJson.mjs";
+import importJson from "./scripts/utils/importJson.mjs";
 import remove from "./scripts/plugins/remove.mjs";
 import fingerprintMeta from "./scripts/plugins/fingerprint-meta.mjs";
 import addStyle from "./scripts/plugins/add-styles.mjs";
