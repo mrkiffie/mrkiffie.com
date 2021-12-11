@@ -12,13 +12,17 @@ Cape Town, South Africa
 
 ### Preferred Technologies
 
-JavaScript, TypeScript, React, MobX, Node.js, git, HTML, CSS
+JavaScript, TypeScript, React, MobX, Node.js, Deno, git, HTML, CSS
 
 ## Work History
 
+### Frontend Tech Lead at [GetMyBoat](https://www.getmyboat.com/)
+
+Sept 2020 - Present
+
 ### Software Engineer at [Kurtosys](https://www.kurtosys.com/)
 
-Jan 2017 - Present
+Jan 2017 - Aug 2020
 
 -   Maintain and extend administration application UI built with react and mobx
 -   Develop new and extend existing api endpoints for consumption by internal and external consumers
