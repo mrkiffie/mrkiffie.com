@@ -1,4 +1,4 @@
-module.exports = () => {
+export default () => {
   "use strict";
   return (files, metalsmith, done) => {
     setImmediate(done);

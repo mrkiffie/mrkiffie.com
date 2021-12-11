@@ -4,7 +4,8 @@
     "eslint-config-prettier"
   ],
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 2021,
+    "sourceType": "module"
   },
   "rules": {
     "arrow-parens": 0,

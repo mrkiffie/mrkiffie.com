@@ -1,6 +1,6 @@
-const multimatch = require("multimatch");
+import multimatch from "multimatch";
 
-module.exports = (options) => {
+export default (options) => {
   "use strict";
   return (files, metalsmith, done) => {
     setImmediate(done);

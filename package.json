@@ -1,11 +1,11 @@
 {
   "name": "mrkiffie.com",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "static site generator for mrkiffie.com",
   "homepage": "http://mrkiffie.com",
   "scripts": {
-    "start": "nodemon --watch build.js --watch scripts build.js --env dev",
-    "build": "rm -rf build/ && node build.js --env prod",
+    "start": "NODE_ENV=development nodemon --watch build.mjs --watch scripts build.mjs",
+    "build": "rm -rf build/ && NODE_ENV=production node build.mjs",
     "lint": "node_modules/eslint/bin/eslint.js --ignore-path .gitignore . --fix",
     "deploy": "npm run build && deploy.sh -c .env",
     "analysis": "plato -r -n -d analysis -x \"(node_modules/|analysis/|build/)\" -e .eslintrc.json ./",
@@ -22,8 +22,9 @@
     "url": "https://github.com/mrkiffie/mrkiffie.com/issues"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=16.0.0"
   },
+  "type": "module",
   "dependencies": {
     "@babel/preset-env": "^7.16.4",
     "@types/node": "^16.11.12",
@@ -61,7 +62,6 @@
     "plato": "1.7.0",
     "request": "2.88.2",
     "st": "^3.0.0",
-    "strftime": "0.10.0",
-    "yargs": "^17.3.0"
+    "strftime": "0.10.0"
   }
 }
