@@ -58,7 +58,7 @@
     "mkdirp": "1.0.4",
     "multimatch": "^6.0.0",
     "negotiator": "^0.6.2",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.20",
     "plato": "1.7.0",
     "request": "2.88.2",
     "st": "^3.0.0",
